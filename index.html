@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Villa Mukinja | Boutique Hotel & Wellness at Plitvice Lakes, Croatia</title>
+<meta name="description" content="Boutique rooms, Finnish sauna & outdoor hot tub a 10-minute walk from Plitvice Lakes National Park. Family-run since the 1980s — comfortable beds, breakfast to die for. Book your stay.">
+<link rel="canonical" href="https://www.plitvice-lakes.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="hotel">
+<meta property="og:title" content="Villa Mukinja | Boutique Hotel & Wellness at Plitvice Lakes">
+<meta property="og:description" content="Boutique rooms, Finnish sauna & outdoor hot tub minutes from Plitvice Lakes National Park. Family-run hospitality in the heart of Croatia's most beautiful park.">
+<meta property="og:image" content="https://www.plitvice-lakes.com/assets/images/spa-2.jpg">
+<meta property="og:url" content="https://www.plitvice-lakes.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Fonts: preconnect + display swap (self-host before production, per playbook) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Preload LCP hero image -->
+<link rel="preload" as="image" href="assets/images/hero.jpg" fetchpriority="high">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Schema: LocalBusiness / Hotel -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Villa Mukinja",
+  "description": "Boutique family-run hotel with Finnish sauna and outdoor hot tub, a 10-minute walk from Plitvice Lakes National Park.",
+  "url": "https://www.plitvice-lakes.com/",
+  "telephone": "+385997877479",
+  "email": "villa.mukinja@gmail.com",
+  "image": "https://www.plitvice-lakes.com/assets/images/hero.jpg",
+  "priceRange": "€€",
+  "starRating": { "@type": "Rating", "ratingValue": "3" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Mukinje 47",
+    "addressLocality": "Plitvička Jezera",
+    "postalCode": "53231",
+    "addressCountry": "HR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 44.8654, "longitude": 15.6094 },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Finnish sauna", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Outdoor hot tub", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Restaurant", "value": true }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/villa.mukinja/",
+    "https://www.instagram.com/villamukinja"
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Villa Mukinja home">
+      <span class="name">Villa Mukinja</span>
+      <span class="sub">Plitvice Lakes · Croatia</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="wellness.html">Wellness</a>
+      <a href="restaurant.html">Restaurant</a>
+      <a href="activities.html">Activities</a>
+      <a href="contact.html">Location</a>
+      <a class="btn btn-primary" href="booking.html" data-book>Book Now</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="booking.html" data-book>Book Now</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"><img src="assets/images/hero.jpg" alt="Stylish modern guest room at Villa Mukinja near Plitvice Lakes" width="1600" height="1067"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <span class="eyebrow reveal">A boutique retreat since the 1980s</span>
+      <h1 class="reveal d1">Where Plitvice's forests<br>meet quiet luxury</h1>
+      <p class="lead reveal d2">A family-run boutique hotel just a ten-minute walk from the waterfalls of Plitvice Lakes National Park. Comfortable beds, a sauna and outdoor hot tub, and a breakfast worth waking up for.</p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-primary btn-lg cta-primary" href="booking.html" data-book>Check Availability</a>
+        <a class="btn btn-outline btn-lg cta-secondary" href="rooms.html">Explore Rooms</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ============ QUICK BOOKING BAR ============ -->
+<section class="bookbar">
+  <div class="container">
+    <form class="inner" action="booking.html" method="get" data-form-type="availability" id="quickbook">
+      <div class="field">
+        <label for="qb-in">Check in</label>
+        <input type="date" id="qb-in" name="checkin" required>
+      </div>
+      <div class="field">
+        <label for="qb-out">Check out</label>
+        <input type="date" id="qb-out" name="checkout" required>
+      </div>
+      <div class="field">
+        <label for="qb-guests">Guests</label>
+        <select id="qb-guests" name="guests">
+          <option>1 guest</option><option selected>2 guests</option>
+          <option>3 guests</option><option>4 guests</option><option>5+ guests</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qb-room">Room type</label>
+        <select id="qb-room" name="room">
+          <option>Any room</option><option>Double</option>
+          <option>Deluxe Double</option><option>Deluxe Triple</option><option>Family Quadruple</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary submit cta-primary" data-book>Check Availability</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ WELCOME / ABOUT ============ -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="split-media reveal">
+        <img src="assets/images/villa-2.jpg" alt="Guest relaxing in the outdoor hot tub at Villa Mukinja" loading="lazy" width="1600" height="1067">
+        <div class="badge"><b>40+</b><span>Years of welcome</span></div>
+      </div>
+      <div class="split-body reveal d1">
+        <span class="eyebrow">Dobrodošli — Welcome</span>
+        <h2>A warm Croatian welcome in the heart of the park</h2>
+        <p class="lead">Run by the same family for over forty years, Villa Mukinja was built on a simple promise: comfortable, affordable and all-around exceptional hospitality.</p>
+        <p>Our team does their utmost to make your stay fun, relaxing and memorable — from cosy interiors and genuinely comfortable beds to a breakfast our guests still write home about. You are not just booking a room; you're settling into a complete experience, moments from one of the most beautiful places on earth.</p>
+        <ul class="feature-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> A 10-minute walk to the Plitvice Lakes entrance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free Finnish sauna &amp; outdoor hot tub for every guest</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Home-cooked breakfast &amp; dinner with local specialties</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free private parking and fast Wi-Fi throughout</li>
+        </ul>
+        <a class="btn btn-dark" href="contact.html">Find Us &amp; Plan Your Visit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROOMS PREVIEW ============ -->
+<section class="section section--cream2">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Stay With Us</span>
+      <h2>Rooms made for resting</h2>
+      <p class="lead">Six individually styled rooms — from cosy doubles to spacious family suites — each with a private bathroom and garden views. A total of eighteen guests, never a crowd.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card reveal">
+        <div class="card-media"><img src="assets/images/hero.jpg" alt="Deluxe Double Room with modern wood-panelled interior" loading="lazy"><span class="card-tag">Most loved</span></div>
+        <div class="card-body">
+          <h3>Deluxe Double Room</h3>
+          <p>Contemporary design with warm wood panelling, ambient lighting and a spa-style bathroom. Our most modern retreat.</p>
+          <div class="card-meta"><span class="chip">2 guests</span><span class="chip">Spa bathtub</span><span class="chip">Garden view</span></div>
+          <div class="card-foot"><span class="price">€110 <small>/ night</small></span><a class="btn btn-primary cta-secondary" href="rooms.html">Details</a></div>
+        </div>
+      </article>
+      <article class="card reveal d1">
+        <div class="card-media"><img src="assets/images/room-1.jpg" alt="Cosy Double Room with garden view"  loading="lazy"></div>
+        <div class="card-body">
+          <h3>Classic Double Room</h3>
+          <p>A snug, light-filled double with all the comforts — perfect for couples exploring the lakes and waterfalls.</p>
+          <div class="card-meta"><span class="chip">2 guests</span><span class="chip">Private bath</span><span class="chip">Wi-Fi</span></div>
+          <div class="card-foot"><span class="price">€90 <small>/ night</small></span><a class="btn btn-primary cta-secondary" href="rooms.html">Details</a></div>
+        </div>
+      </article>
+      <article class="card reveal d2">
+        <div class="card-media"><img src="assets/images/room-5.jpg" alt="Spacious Family Quadruple Room" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Family Quadruple Room</h3>
+          <p>Room to spread out for the whole family, with comfortable bedding for four and a calm, restful atmosphere.</p>
+          <div class="card-meta"><span class="chip">4 guests</span><span class="chip">Family</span><span class="chip">Garden view</span></div>
+          <div class="card-foot"><span class="price">€150 <small>/ night</small></span><a class="btn btn-primary cta-secondary" href="rooms.html">Details</a></div>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:var(--s5)" class="reveal">
+      <a class="btn btn-dark btn-lg" href="rooms.html">View All Rooms</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WELLNESS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="split reverse">
+      <div class="split-media reveal">
+        <img src="assets/images/spa-2.jpg" alt="Outdoor hot tub with loungers surrounded by greenery" loading="lazy" width="1600" height="1067">
+      </div>
+      <div class="split-body reveal d1">
+        <span class="eyebrow">Wellness &amp; Spa</span>
+        <h2>Unwind after the trails</h2>
+        <p class="lead">A day among the lakes deserves a proper reward. Sink into our outdoor hot tub or warm up in the Finnish sauna — both free for every guest.</p>
+        <ul class="feature-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <strong>Sundance Maxxus 880 hot tub</strong> — 50+ jets, ozone &amp; aromatherapy</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <strong>Finnish sauna</strong> for muscle relaxation and detox</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sun loungers, garden terrace and mountain air</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Relaxing massages available on request</li>
+        </ul>
+        <a class="btn btn-dark" href="wellness.html">Discover the Spa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="section--tight section--pine">
+  <div class="container">
+    <div class="stats">
+      <div class="stat reveal"><b data-count="10" data-suffix=" min">0</b><span>Walk to the lakes</span></div>
+      <div class="stat reveal d1"><b data-count="6">0</b><span>Individual rooms</span></div>
+      <div class="stat reveal d2"><b data-count="18">0</b><span>Guests welcomed</span></div>
+      <div class="stat reveal d3"><b data-count="40" data-suffix="+">0</b><span>Years family-run</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESTAURANT ============ -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="split-media reveal">
+        <img src="assets/images/restaurant-2.jpg" alt="Outdoor restaurant terrace set for dinner at Villa Mukinja" loading="lazy" width="1600" height="1067">
+        <div class="badge"><b>4</b><span>Course dinner</span></div>
+      </div>
+      <div class="split-body reveal d1">
+        <span class="eyebrow">Eat &amp; Drink</span>
+        <h2>Breakfast to die for, dinners to linger over</h2>
+        <p class="lead">Our kitchen cooks honest local cuisine from the freshest ingredients — and the welcome doesn't stop at the door.</p>
+        <p>Mornings begin with the regional dairy specialty <em>basa</em> and home-made cheese. Evenings unfold over a four-course dinner, a carefully chosen Croatian wine — a Dingač or an Istrian Malvazija — and a glass of house plum brandy (<em>šljivovica</em>), traditionally on us.</p>
+        <a class="btn btn-dark" href="restaurant.html">See the Restaurant</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITIES ============ -->
+<section class="section section--cream2">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Beyond the Lakes</span>
+      <h2>Adventures on your doorstep</h2>
+      <p class="lead">The national park is only the beginning. From wildlife to white water, the Plitvice valleys are full of things to do.</p>
+    </div>
+    <div class="grid grid-4">
+      <article class="card reveal">
+        <div class="card-media"><img src="assets/images/act-deer.jpg" alt="Deer at Deer Valley Ranch near Plitvice" loading="lazy"></div>
+        <div class="card-body"><h3>Deer Valley Ranch</h3><p>A 15-hectare outdoor zoo home to over 100 animals rarely seen up close.</p></div>
+      </article>
+      <article class="card reveal d1">
+        <div class="card-media"><img src="assets/images/act-zipline.jpg" alt="Zipline over the Plitvice valley" loading="lazy"></div>
+        <div class="card-body"><h3>Zipline Pazi Medo</h3><p>1,700 m of pure adrenaline — one of the longest ziplines in Europe.</p></div>
+      </article>
+      <article class="card reveal d2">
+        <div class="card-media"><img src="assets/images/act-adrenalin.jpg" alt="Adventure rope park near Plitvice Lakes" loading="lazy"></div>
+        <div class="card-body"><h3>Adrenalin Park OGI</h3><p>Rope courses, axe throwing, paintball and karting for the whole family.</p></div>
+      </article>
+      <article class="card reveal d3">
+        <div class="card-media"><img src="assets/images/act-rafting.jpg" alt="Rafting on the Una River" loading="lazy"></div>
+        <div class="card-body"><h3>Una River Rafting</h3><p>Springtime white-water rafting on one of Croatia's most beautiful rivers.</p></div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:var(--s5)" class="reveal">
+      <a class="btn btn-dark btn-lg" href="activities.html">All Activities</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Guest Stories</span>
+      <h2>Loved by travellers from around the world</h2>
+    </div>
+    <div class="quote-grid">
+      <figure class="quote reveal">
+        <div class="stars">★★★★★</div>
+        <p>"The breakfast alone is worth the stay — and the sauna and hot tub after a day of hiking were heaven. The host made us feel like family."</p>
+        <figcaption class="who"><span class="av">A</span><span><b>Anna &amp; Lukas</b><span>Germany</span></span></figcaption>
+      </figure>
+      <figure class="quote reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>"Spotless rooms, incredible food and a ten-minute walk to the lakes. You couldn't ask for a better base to explore Plitvice."</p>
+        <figcaption class="who"><span class="av">M</span><span><b>Marco</b><span>Italy</span></span></figcaption>
+      </figure>
+      <figure class="quote reveal d2">
+        <div class="stars">★★★★★</div>
+        <p>"The attention from our host was exceptional. Everything was thought of. We left relaxed and already planning our return."</p>
+        <figcaption class="who"><span class="av">S</span><span><b>Sophie</b><span>France</span></span></figcaption>
+      </figure>
+    </div>
+    <div class="placeholder-note" style="max-width:680px;margin:var(--s4) auto 0">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Placeholder reviews shown for the demo — to be replaced with your verified Google / Booking.com testimonials before launch.
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section section--cream2">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Gallery</span>
+      <h2>A glimpse of Villa Mukinja</h2>
+    </div>
+    <div class="gallery reveal">
+      <a class="wide tall" href="assets/images/spa-2.jpg" data-lightbox><img src="assets/images/spa-2.jpg" alt="Outdoor hot tub and garden terrace" loading="lazy"></a>
+      <a href="assets/images/room-1.jpg" data-lightbox><img src="assets/images/room-1.jpg" alt="Cosy double room" loading="lazy"></a>
+      <a href="assets/images/restaurant-3.jpg" data-lightbox><img src="assets/images/restaurant-3.jpg" alt="Wine and flowers at the bar" loading="lazy"></a>
+      <a href="assets/images/spa-3.jpg" data-lightbox><img src="assets/images/spa-3.jpg" alt="Finnish sauna interior" loading="lazy"></a>
+      <a href="assets/images/villa-3.jpg" data-lightbox><img src="assets/images/villa-3.jpg" alt="Hot tub with hammock" loading="lazy"></a>
+      <a class="wide" href="assets/images/restaurant-2.jpg" data-lightbox><img src="assets/images/restaurant-2.jpg" alt="Restaurant terrace" loading="lazy"></a>
+      <a href="assets/images/room-5.jpg" data-lightbox><img src="assets/images/room-5.jpg" alt="Family room" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="section cta-band">
+  <div class="bg"><img src="assets/images/spa-2.jpg" alt="" loading="lazy" aria-hidden="true"></div>
+  <div class="container">
+    <span class="eyebrow center reveal">Your Plitvice escape awaits</span>
+    <h2 class="reveal d1">Book directly &amp; stay for less</h2>
+    <p class="lead reveal d2">Reserve through us for the best available rate, a warm welcome and the full Villa Mukinja experience — sauna, hot tub and breakfast included.</p>
+    <div class="hero-actions reveal d3">
+      <a class="btn btn-primary btn-lg cta-primary" href="booking.html" data-book>Check Availability</a>
+      <a class="btn btn-outline btn-lg whatsapp-link" href="https://wa.me/385997877479" target="_blank" rel="noopener">Message on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:var(--s3)"><span class="name">Villa Mukinja</span><span class="sub">Plitvice Lakes · Croatia</span></a>
+        <p>A family-run boutique hotel and wellness retreat, a ten-minute walk from Plitvice Lakes National Park. Comfortable beds, a sauna and hot tub, and a breakfast to die for.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/villa.mukinja/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="https://www.instagram.com/villamukinja" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="https://wa.me/385997877479" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+          <li><a href="wellness.html">Wellness &amp; Spa</a></li>
+          <li><a href="restaurant.html">Restaurant</a></li>
+          <li><a href="activities.html">Activities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="contact.html">Location</a></li>
+          <li><a href="booking.html" data-book>Book a Stay</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Mukinje 47, 53231<br>Plitvička Jezera, Croatia</span></div>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><a href="tel:+385997877479">+385 99 7877 479</a></div>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:villa.mukinja@gmail.com">villa.mukinja@gmail.com</a></div>
+        <a class="btn btn-primary cta-primary" href="booking.html" data-book style="margin-top:var(--s2)">Book Now</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Villa Mukinja. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Crafted with care in Croatia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="mobile-cta">
+  <a class="btn btn-dark cta-secondary" href="tel:+385997877479">Call</a>
+  <a class="btn btn-primary cta-primary" href="booking.html" data-book>Book Now</a>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
