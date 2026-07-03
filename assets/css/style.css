@@ -408,3 +408,50 @@ p  { color: var(--muted); }
 @media (min-width: 861px) {
   .nav > .btn { display: none; }
 }
+
+/* ===================================================================
+   Mobile refinements (homepage hero, booking strip, rooms slider)
+   =================================================================== */
+
+/* Booking CTA strip (replaces the old calendar bar) */
+.bookcta { text-align: center; padding-block: var(--s6); }
+.bookcta .eyebrow.center { justify-content: center; color: var(--brass); }
+.bookcta .eyebrow.center::before, .bookcta .eyebrow.center::after { background: var(--brass); }
+.bookcta h2 { color: var(--cream); margin: var(--s2) 0 var(--s4); }
+
+/* Hero: staggered entrance so the photo lands first, then the words */
+.hero .reveal        { transition-duration: 1s; transition-delay: .2s; }
+.hero .reveal.d1     { transition-delay: .45s; }
+.hero .reveal.d2     { transition-delay: .7s; }
+.hero .reveal.d3     { transition-delay: 1s; }
+
+/* Rooms: horizontal swipe slider on mobile instead of a long scroll */
+@media (max-width: 860px) {
+  .room-cards {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-auto-columns: 82%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: var(--s3);
+    padding-bottom: var(--s2);
+    margin-inline: calc(var(--s3) * -1);
+    padding-inline: var(--s3);
+    scrollbar-width: none;
+  }
+  .room-cards::-webkit-scrollbar { display: none; }
+  .room-cards .card { scroll-snap-align: center; }
+}
+
+/* Smaller, tidier CTAs on phones (hero + CTA band both use .btn-lg) */
+@media (max-width: 560px) {
+  .hero { align-items: flex-start; }
+  .hero-inner { padding-top: calc(var(--header-h) + var(--s4)); }
+  .hero h1 { font-size: clamp(2.1rem, 8.5vw, 2.7rem); margin: var(--s2) 0; }
+  .hero .lead { font-size: 1.02rem; }
+  .hero-actions { margin-top: var(--s4); gap: var(--s2); }
+
+  .btn-lg { padding: 14px 22px; font-size: .95rem; }
+  .hero-actions .btn, .cta-band .hero-actions .btn { flex: 1 1 auto; }
+}
