@@ -114,6 +114,63 @@
     });
   });
 
+  /* ---- hero background slideshow (crossfade + slow zoom) ---- */
+  var heroImgs = document.querySelectorAll(".hero-bg img");
+  if (heroImgs.length > 1) {
+    var heroIdx = 0;
+    setInterval(function () {
+      heroImgs[heroIdx].classList.remove("active");
+      heroIdx = (heroIdx + 1) % heroImgs.length;
+      heroImgs[heroIdx].classList.add("active");
+    }, 6000);
+  }
+
+  /* ---- floating chat button (call / WhatsApp) ---- */
+  var fab = document.getElementById("chat-fab");
+  if (fab) {
+    var fabBtn = fab.querySelector(".chat-fab-btn");
+    fabBtn.addEventListener("click", function () {
+      var open = fab.classList.toggle("open");
+      fabBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) track("chat_fab_open", {});
+    });
+    document.addEventListener("click", function (e) {
+      if (!fab.contains(e.target)) { fab.classList.remove("open"); fabBtn.setAttribute("aria-expanded", "false"); }
+    });
+  }
+
+  /* ---- rooms slider (homepage): arrows + snap scrolling ---- */
+  var slider = document.querySelector(".room-slider");
+  if (slider) {
+    var trackEl = slider.querySelector(".rs-track");
+    var prev = slider.querySelector(".rs-prev");
+    var next = slider.querySelector(".rs-next");
+    function slideW() { var s = trackEl.querySelector(".rs-slide"); return s ? s.offsetWidth + 16 : trackEl.clientWidth; }
+    function updateArrows() {
+      var max = trackEl.scrollWidth - trackEl.clientWidth - 4;
+      prev.classList.toggle("rs-hidden", trackEl.scrollLeft <= 4);
+      next.classList.toggle("rs-hidden", trackEl.scrollLeft >= max);
+    }
+    /* plain position updates + CSS scroll-behavior:smooth on the track —
+       works even where JS smooth-scrolling is throttled */
+    prev.addEventListener("click", function () { trackEl.scrollLeft -= slideW(); });
+    next.addEventListener("click", function () { trackEl.scrollLeft += slideW(); });
+    trackEl.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    updateArrows();
+  }
+
+  /* ---- button entrance animation on scroll (pop + gold shine) ---- */
+  var btns = document.querySelectorAll(".section .btn, .cta-band .btn, .bookcta .btn");
+  if ("IntersectionObserver" in window && btns.length) {
+    var bo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("btn-in"); bo.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    btns.forEach(function (b) { bo.observe(b); });
+  }
+
   /* ---- prefill year on footer ---- */
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();

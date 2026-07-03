@@ -21,9 +21,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Preload LCP hero image -->
-<link rel="preload" as="image" href="assets/images/hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/images/hero-nature-1.jpg" fetchpriority="high">
 
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
 
 <!-- Schema: LocalBusiness / GuestHouse -->
 <script type="application/ld+json">
@@ -86,7 +86,11 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="hero-bg"><img src="assets/images/hero.jpg" alt="Stylish modern guest room at Villa Mukinja near Plitvice Lakes" width="1600" height="1067"></div>
+  <div class="hero-bg">
+    <img class="active" src="assets/images/hero-nature-1.jpg" alt="Waterfalls of Plitvice Lakes National Park" width="1800" height="1013">
+    <img src="assets/images/hero-nature-2.jpg" alt="Turquoise lakes and forest at Plitvice" width="1800" height="1013" loading="lazy">
+    <img src="assets/images/hero-nature-3.jpg" alt="Wooden walkways over the Plitvice lakes" width="1800" height="1013" loading="lazy">
+  </div>
   <div class="container">
     <div class="hero-inner">
       <span class="eyebrow reveal">One family, one house, since the 1980s</span>
@@ -143,37 +147,35 @@
       <h2>Rooms made for resting</h2>
       <p class="lead">Six individually styled rooms across three room types — each with a private bathroom, garden views, all-season air conditioning and everything your devices need. A total of eighteen guests, never a crowd.</p>
     </div>
-    <div class="grid grid-3 room-cards">
-      <article class="card reveal">
-        <div class="card-media"><img src="assets/images/hero.jpg" alt="Deluxe Double Room with modern wood-panelled interior" loading="lazy"><span class="card-tag">Most loved</span></div>
-        <div class="card-body">
-          <h3>Deluxe Double Room</h3>
-          <p>Contemporary design with warm wood panelling, ambient lighting and a spa-style bathroom. Satellite TV with 80+ channels, air conditioning that heats and cools, and fast USB-A &amp; USB-C bedside charging.</p>
-          <div class="card-meta"><span class="chip">2 guests</span><span class="chip">Spa bathtub</span><span class="chip">USB-C fast charging</span></div>
-          <div class="card-foot"><span class="price"></span><a class="btn btn-primary cta-secondary" href="rooms.html">Details</a></div>
-        </div>
-      </article>
-      <article class="card reveal d1">
-        <div class="card-media"><img src="assets/images/room-2.jpg" alt="Deluxe Triple Room with king size bed and single bed" loading="lazy"></div>
-        <div class="card-body">
-          <h3>Deluxe Triple Room</h3>
-          <p>A king size bed plus a single — perfect for friends or a small family. Satellite TV with 80+ channels, heating &amp; cooling AC, and fast chargers for every device on the nightstand.</p>
-          <div class="card-meta"><span class="chip">3 guests</span><span class="chip">King + single bed</span><span class="chip">AC heat &amp; cool</span></div>
-          <div class="card-foot"><span class="price"></span><a class="btn btn-primary cta-secondary" href="rooms.html">Details</a></div>
-        </div>
-      </article>
-      <article class="card reveal d2">
-        <div class="card-media"><img src="assets/images/room-5.jpg" alt="Spacious Family Quadruple Room" loading="lazy"></div>
-        <div class="card-body">
-          <h3>Family Quadruple Room</h3>
-          <p>Room to spread out for the whole family, with comfortable bedding for four, satellite TV with 80+ channels, all-season air conditioning and fast USB-A &amp; USB-C charging.</p>
-          <div class="card-meta"><span class="chip">4 guests</span><span class="chip">Family</span><span class="chip">Garden view</span></div>
-          <div class="card-foot"><span class="price"></span><a class="btn btn-primary cta-secondary" href="rooms.html">Details</a></div>
-        </div>
-      </article>
+    <div class="room-slider reveal">
+      <button class="rs-arrow rs-prev" aria-label="Previous room" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+      <div class="rs-track">
+        <figure class="rs-slide">
+          <img src="assets/images/hero.jpg" alt="Deluxe Double Room with modern wood-panelled interior" loading="lazy">
+          <figcaption class="rs-bubble">
+            <h3>Deluxe Double</h3>
+            <p>Wood-panelled comfort and a spa-style bathroom, made for two.</p>
+          </figcaption>
+        </figure>
+        <figure class="rs-slide">
+          <img src="assets/images/room-2.jpg" alt="Deluxe Triple Room with king size bed and single bed" loading="lazy">
+          <figcaption class="rs-bubble">
+            <h3>Deluxe Triple</h3>
+            <p>King size bed plus a single — ideal for friends or a small family.</p>
+          </figcaption>
+        </figure>
+        <figure class="rs-slide">
+          <img src="assets/images/room-5.jpg" alt="Spacious Family Quadruple Room" loading="lazy">
+          <figcaption class="rs-bubble">
+            <h3>Family Quadruple</h3>
+            <p>Our most spacious room — space for four to truly unwind.</p>
+          </figcaption>
+        </figure>
+      </div>
+      <button class="rs-arrow rs-next" aria-label="Next room" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
     <div style="text-align:center;margin-top:var(--s5)" class="reveal">
-      <a class="btn btn-dark btn-lg" href="rooms.html">View All Rooms</a>
+      <a class="btn btn-dark btn-lg" href="rooms.html">Details</a>
     </div>
   </div>
 </section>
@@ -339,11 +341,18 @@
 </footer>
 
 <!-- ============ STICKY MOBILE CTA ============ -->
-<div class="mobile-cta">
-  <a class="btn btn-dark cta-secondary" href="tel:+385997877479">Call</a>
-  <a class="btn btn-primary cta-primary" href="booking.html" data-book>Book Now</a>
+<div class="chat-fab" id="chat-fab">
+  <div class="chat-fab-options">
+    <a class="fab-opt fab-wa whatsapp-link" href="https://wa.me/385997877479" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>WhatsApp</span></a>
+    <a class="fab-opt fab-call" href="tel:+385997877479"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>Call us</span></a>
+  </div>
+  <button class="chat-fab-btn" aria-label="Contact us" aria-expanded="false" type="button">
+    <svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
 </div>
 
-<script src="assets/js/main.js"></script>
+
+<script src="assets/js/main.js?v=4"></script>
 </body>
 </html>
