@@ -38,7 +38,8 @@
   var burger = document.querySelector(".burger");
   if (burger) {
     burger.addEventListener("click", function () {
-      document.body.classList.toggle("menu-open");
+      var open = document.body.classList.toggle("menu-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
     document.querySelectorAll(".nav a").forEach(function (link) {
       link.addEventListener("click", function () { document.body.classList.remove("menu-open"); });
@@ -77,15 +78,33 @@
     stats.forEach(function (el) { so.observe(el); });
   }
 
-  /* ---- quote/booking form (demo handler — no backend yet) ---- */
+  /* ---- enquiry/contact forms -> inbox via FormSubmit ----
+     The address is assembled at runtime so it never appears in the
+     HTML source (basic protection against spam harvesters). */
+  var FS_ENDPOINT = "https://formsubmit.co/ajax/" + ["villa", "mukinja"].join(".") + "@" + ["gmail", "com"].join(".");
   document.querySelectorAll("form[data-form-type]").forEach(function (form) {
+    if (form.dataset.formType === "availability") return; // quickbook bar navigates to booking.html
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       track("form_submit", { form_type: form.dataset.formType });
-      var success = form.querySelector(".form-success");
-      var fields = form.querySelector(".form-fields");
-      if (success && fields) { fields.style.display = "none"; success.classList.add("show"); }
-      else form.reset();
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = "Sending…"; }
+      var data = { _subject: "Website enquiry — Villa Mukinja (" + form.dataset.formType + ")", _template: "table", _captcha: "false" };
+      form.querySelectorAll("input[name], select[name], textarea[name]").forEach(function (el) { data[el.name] = el.value; });
+      fetch(FS_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (!r.ok) throw new Error("send failed");
+        var success = form.querySelector(".form-success");
+        var fields = form.querySelector(".form-fields");
+        if (success && fields) { fields.style.display = "none"; success.classList.add("show"); }
+        else form.reset();
+      }).catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label; }
+        alert("Sorry, the message could not be sent right now. Please call or WhatsApp us at +385 99 7877 479.");
+      });
     });
     // form_start (first focus) — diagnostic event
     var started = false;

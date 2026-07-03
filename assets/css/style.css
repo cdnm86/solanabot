@@ -403,3 +403,8 @@ p  { color: var(--muted); }
   .hero-actions .btn { flex: 1; }
   .container { padding-inline: var(--s2); }
 }
+
+/* Desktop: the nav's Book Now duplicates the header-cta one — show it only inside the mobile menu */
+@media (min-width: 861px) {
+  .nav > .btn { display: none; }
+}
