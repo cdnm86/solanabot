@@ -23,7 +23,7 @@
 <!-- Preload LCP hero image -->
 <link rel="preload" as="image" href="assets/images/hero-nature-1.jpg" fetchpriority="high">
 
-<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
 
 <!-- Schema: LocalBusiness / GuestHouse -->
 <script type="application/ld+json">
@@ -105,15 +105,6 @@
   <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
 </section>
 
-<!-- ============ BOOKING CTA STRIP ============ -->
-<section class="bookcta section--pine">
-  <div class="container">
-    <span class="eyebrow center">Plan your stay</span>
-    <h2>Find your room by the lakes</h2>
-    <a class="btn btn-primary btn-lg cta-primary" href="rooms.html">Check Availability</a>
-  </div>
-</section>
-
 <!-- ============ WELCOME / ABOUT ============ -->
 <section class="section">
   <div class="container">
@@ -140,7 +131,7 @@
 </section>
 
 <!-- ============ ROOMS PREVIEW ============ -->
-<section class="section section--cream2">
+<section class="section section--cream2 pb-tight">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow center">Stay With Us</span>
@@ -150,33 +141,42 @@
     <div class="room-slider reveal">
       <button class="rs-arrow rs-prev" aria-label="Previous room" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
       <div class="rs-track">
-        <figure class="rs-slide">
+        <a class="rs-slide" href="rooms.html" aria-label="Deluxe Double Room — see details">
           <img src="assets/images/hero.jpg" alt="Deluxe Double Room with modern wood-panelled interior" loading="lazy">
-          <figcaption class="rs-bubble">
+          <span class="rs-bubble">
             <h3>Deluxe Double</h3>
             <p>Wood-panelled comfort and a spa-style bathroom, made for two.</p>
-          </figcaption>
-        </figure>
-        <figure class="rs-slide">
+            <span class="rs-more">See details ›</span>
+          </span>
+        </a>
+        <a class="rs-slide" href="rooms.html" aria-label="Deluxe Triple Room — see details">
           <img src="assets/images/room-2.jpg" alt="Deluxe Triple Room with king size bed and single bed" loading="lazy">
-          <figcaption class="rs-bubble">
+          <span class="rs-bubble">
             <h3>Deluxe Triple</h3>
             <p>King size bed plus a single — ideal for friends or a small family.</p>
-          </figcaption>
-        </figure>
-        <figure class="rs-slide">
+            <span class="rs-more">See details ›</span>
+          </span>
+        </a>
+        <a class="rs-slide" href="rooms.html" aria-label="Family Quadruple Room — see details">
           <img src="assets/images/room-5.jpg" alt="Spacious Family Quadruple Room" loading="lazy">
-          <figcaption class="rs-bubble">
+          <span class="rs-bubble">
             <h3>Family Quadruple</h3>
             <p>Our most spacious room — space for four to truly unwind.</p>
-          </figcaption>
-        </figure>
+            <span class="rs-more">See details ›</span>
+          </span>
+        </a>
       </div>
       <button class="rs-arrow rs-next" aria-label="Next room" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
     </div>
-    <div style="text-align:center;margin-top:var(--s5)" class="reveal">
-      <a class="btn btn-dark btn-lg" href="rooms.html">Details</a>
-    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING CTA STRIP ============ -->
+<section class="bookcta section--pine">
+  <div class="container">
+    <span class="eyebrow center">Plan your stay</span>
+    <h2>Find your room by the lakes</h2>
+    <a class="btn btn-primary cta-primary" href="rooms.html">Check Availability</a>
   </div>
 </section>
 
@@ -353,6 +353,6 @@
 </div>
 
 
-<script src="assets/js/main.js?v=4"></script>
+<script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
