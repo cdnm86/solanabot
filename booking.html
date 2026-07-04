@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=5">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 
@@ -48,15 +48,40 @@
       <p class="lead">Book directly with us for the best available rate and a warm welcome — free sauna and hot tub with every room, home-made breakfast on request. Live prices and availability below.</p>
     </div>
 
+    <!-- Our own search bar — feeds the rentl.io engine below with prefilled dates & guests -->
+    <form class="rbe-search reveal" id="rbe-search">
+      <div class="field">
+        <label for="s-in">Check in</label>
+        <input type="date" id="s-in" required>
+      </div>
+      <div class="field">
+        <label for="s-out">Check out</label>
+        <input type="date" id="s-out" required>
+      </div>
+      <div class="field">
+        <label for="s-adults">Adults</label>
+        <select id="s-adults"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+      </div>
+      <div class="field">
+        <label for="s-children">Children</label>
+        <select id="s-children"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+      </div>
+      <div class="field rbe-ages" id="s-ages-wrap" hidden>
+        <label>Children's ages</label>
+        <div id="s-ages"></div>
+      </div>
+      <button type="submit" class="btn btn-primary submit">Show Availability</button>
+    </form>
+
     <!-- rentl.io live booking engine -->
     <div id="booking-widget" class="reveal" style="border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(15,30,26,.12);border:1px solid var(--line)">
-      <iframe
+      <iframe id="rbe-frame"
         src="https://plitvice-lakes.book.rentl.io/"
         title="Villa Mukinja booking calendar — live availability and prices"
         style="width:100%;height:1150px;border:0;display:block"
         loading="lazy"></iframe>
     </div>
-    <p style="text-align:center;margin-top:var(--s3);font-size:.95rem;opacity:.8">Calendar not loading? <a href="https://plitvice-lakes.book.rentl.io/" target="_blank" rel="noopener"><strong>Open the booking page in a new tab</strong></a>.</p>
+    <p style="text-align:center;margin-top:var(--s3);font-size:.95rem;opacity:.8">Calendar not loading? <a id="rbe-fallback" href="https://plitvice-lakes.book.rentl.io/" target="_blank" rel="noopener"><strong>Open the booking page in a new tab</strong></a>.</p>
 
     <!-- Fallback enquiry form + direct contact (works today) -->
     <div class="split" style="margin-top:var(--s7);align-items:start">
@@ -166,6 +191,55 @@
   </button>
 </div>
 
-<script src="assets/js/main.js?v=5"></script>
+<script src="assets/js/main.js?v=6"></script>
+<script>
+/* Custom search -> rentl.io engine with prefilled parameters
+   RBE accepts: ?from=DD-MM-YYYY&to=DD-MM-YYYY&adults=N&children=age,age */
+(function () {
+  var form = document.getElementById("rbe-search");
+  if (!form) return;
+  var inEl = document.getElementById("s-in"), outEl = document.getElementById("s-out");
+  var adultsEl = document.getElementById("s-adults"), childrenEl = document.getElementById("s-children");
+  var agesWrap = document.getElementById("s-ages-wrap"), agesBox = document.getElementById("s-ages");
+  var frame = document.getElementById("rbe-frame"), fallback = document.getElementById("rbe-fallback");
+  var BASE = "https://plitvice-lakes.book.rentl.io/";
+
+  var today = new Date().toISOString().split("T")[0];
+  inEl.min = today; outEl.min = today;
+  inEl.addEventListener("change", function () { if (inEl.value) outEl.min = inEl.value; });
+
+  childrenEl.addEventListener("change", function () {
+    var n = parseInt(childrenEl.value, 10);
+    agesBox.innerHTML = "";
+    for (var i = 0; i < n; i++) {
+      var sel = document.createElement("select");
+      sel.setAttribute("aria-label", "Age of child " + (i + 1));
+      for (var a = 1; a <= 17; a++) {
+        var opt = document.createElement("option");
+        opt.value = a; opt.textContent = a + " yrs";
+        if (a === 8) opt.selected = true;
+        sel.appendChild(opt);
+      }
+      agesBox.appendChild(sel);
+    }
+    agesWrap.hidden = n === 0;
+  });
+
+  function ddmmyyyy(iso) { var p = iso.split("-"); return p[2] + "-" + p[1] + "-" + p[0]; }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!inEl.value || !outEl.value) return;
+    var params = ["from=" + ddmmyyyy(inEl.value), "to=" + ddmmyyyy(outEl.value), "adults=" + adultsEl.value];
+    var ages = [].map.call(agesBox.querySelectorAll("select"), function (s) { return s.value; });
+    if (ages.length) params.push("children=" + ages.join(","));
+    var url = BASE + "?" + params.join("&");
+    frame.src = url;
+    fallback.href = url;
+    if (window.dataLayer) window.dataLayer.push({ event: "availability_search", from: inEl.value, to: outEl.value, adults: adultsEl.value, children: ages.join(",") });
+    document.getElementById("booking-widget").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+})();
+</script>
 </body>
 </html>
