@@ -664,3 +664,24 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; max-width: 100vw; }
   .poi { min-width: 38px; height: 38px; font-size: .78rem; }
   .park-swipe-hint { display: block; grid-column: 1 / -1; text-align: center; font-size: .82rem; color: var(--brass-deep); font-weight: 600; letter-spacing: .04em; margin-bottom: var(--s1); }
 }
+
+/* ===== park map: real pocket-map artwork ===== */
+.park-map img { display: block; width: 100%; height: auto; }
+/* soften the cropped edges (bottom photos / right panel were trimmed) */
+.park-map::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 94%, rgba(8,16,10,.92) 97.5%, #0a120c 100%),
+    linear-gradient(90deg, transparent 98%, rgba(8,16,10,.6) 100%);
+}
+/* badge colours matched to the printed map */
+.poi-st { background: #ffd41d; color: #1b211e; text-shadow: none; }
+.poi-p { background: #e6007e; }
+.poi-slap { background: #3d6fa3; }
+/* patch over the printed old-St3 badge (station removed by the park) */
+.poi-cover {
+  position: absolute; transform: translate(-50%, -50%);
+  width: 3.2%; aspect-ratio: 1; border-radius: 50%;
+  background: #33582f; box-shadow: 0 0 10px 6px rgba(51,88,47,.95);
+  pointer-events: none; opacity: .96;
+}

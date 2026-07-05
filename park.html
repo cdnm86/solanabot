@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/images/hero-nature-1.jpg" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,95 +97,23 @@
     <div class="park-map-wrap reveal">
       <p class="park-swipe-hint">↔ Swipe the map to explore</p>
       <div class="park-scroll" id="park-scroll"><div class="park-map" id="park-map">
-        <svg viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="lakeg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#8fd8cc"/><stop offset="1" stop-color="#2f9d8a"/>
-            </linearGradient>
-            <linearGradient id="terr" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#b9d2a5"/><stop offset="1" stop-color="#87b283"/>
-            </linearGradient>
-          </defs>
+        <img src="assets/images/park-map.jpg?v=1" alt="Hand-painted panoramic map of Plitvice Lakes National Park with entrances, train and boat stations" width="1636" height="1150">
 
-          <!-- terrain -->
-          <rect x="0" y="0" width="1000" height="720" rx="18" fill="url(#terr)"/>
-          <path d="M0 240 Q140 140 300 190 Q420 230 520 160 Q660 70 830 130 L1000 90 L1000 0 L0 0 Z" fill="#6f9e6f" opacity=".55"/>
-          <path d="M0 720 Q220 640 430 660 Q660 685 1000 600 L1000 720 Z" fill="#57855c" opacity=".5"/>
-          <path d="M620 0 Q700 120 860 150 Q950 165 1000 150 L1000 0 Z" fill="#7fae7d" opacity=".6"/>
-          <!-- forest dots -->
-          <g fill="#3f6d49" opacity=".35">
-            <circle cx="120" cy="330" r="10"/><circle cx="160" cy="360" r="8"/><circle cx="90" cy="420" r="12"/>
-            <circle cx="640" cy="560" r="10"/><circle cx="700" cy="590" r="8"/><circle cx="760" cy="540" r="11"/>
-            <circle cx="880" cy="430" r="9"/><circle cx="300" cy="120" r="9"/><circle cx="560" cy="90" r="10"/>
-            <circle cx="240" cy="520" r="9"/><circle cx="60" cy="180" r="9"/><circle cx="930" cy="560" r="10"/>
-          </g>
+        <!-- covers the printed old St3 badge (station no longer exists) -->
+        <span class="poi-cover" style="left:43.4%;top:66.3%" aria-hidden="true"></span>
 
-          <!-- main road (D1): Split/Zadar -> Mukinje -> E2 -> E1 -> Zagreb -->
-          <path d="M40 665 Q220 620 340 585 Q400 566 440 545 Q470 528 480 505 Q505 470 585 462 Q680 452 730 415 Q780 372 800 331 Q830 280 900 262 Q950 250 990 246"
-                fill="none" stroke="#f3ecd9" stroke-width="13" stroke-linecap="round" opacity=".95"/>
-          <path d="M40 665 Q220 620 340 585 Q400 566 440 545 Q470 528 480 505 Q505 470 585 462 Q680 452 730 415 Q780 372 800 331 Q830 280 900 262 Q950 250 990 246"
-                fill="none" stroke="#c9bd9d" stroke-width="2" stroke-dasharray="8 10" opacity=".8"/>
-
-          <!-- panoramic train road: St3 -> St2 -> St1 -->
-          <path d="M200 115 Q210 190 250 255 Q300 330 360 385 Q400 425 430 446 Q500 486 560 468 Q650 442 720 374"
-                fill="none" stroke="#e5b83d" stroke-width="7" stroke-linecap="round" opacity=".9"/>
-
-          <!-- upper lakes: Prošćansko + chain to Kozjak -->
-          <path d="M165 130 Q205 120 225 160 Q240 195 262 225 Q280 250 268 268 Q250 285 228 262 Q195 230 175 195 Q152 160 165 130 Z" fill="url(#lakeg)"/>
-          <path d="M268 268 Q296 282 310 308 Q322 330 344 344 Q332 360 312 350 Q286 336 274 312 Q262 292 268 268 Z" fill="url(#lakeg)"/>
-          <path d="M344 344 Q372 358 388 382 Q402 402 424 414 Q414 432 392 422 Q366 410 352 386 Q340 366 344 344 Z" fill="url(#lakeg)"/>
-
-          <!-- Kozjak -->
-          <path d="M424 414 Q446 398 478 396 Q520 394 552 366 Q590 334 622 306 Q648 284 640 288 Q664 272 656 300 Q646 330 606 362 Q566 394 528 416 Q490 438 458 434 Q432 430 424 414 Z" fill="url(#lakeg)"/>
-
-          <!-- lower lakes canyon to Veliki slap -->
-          <path d="M652 292 Q676 274 700 268 Q730 260 756 254 Q792 246 826 242 Q850 240 862 238 Q850 252 824 256 Q790 262 758 268 Q726 276 702 284 Q676 292 652 292 Z" fill="url(#lakeg)"/>
-
-          <!-- waterfall ticks between lakes -->
-          <g stroke="#eafaf6" stroke-width="3" stroke-linecap="round" opacity=".95">
-            <path d="M266 266 l8 8"/><path d="M342 342 l8 8"/><path d="M422 412 l8 6"/>
-            <path d="M650 292 l8 -6"/><path d="M756 258 l4 8"/><path d="M824 246 l4 8"/>
-          </g>
-          <!-- Veliki slap fall -->
-          <path d="M862 226 q4 12 0 24" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none"/>
-
-          <!-- boat routes -->
-          <path d="M465 410 Q482 400 500 389" fill="none" stroke="#0e5d52" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/>
-          <path d="M500 389 Q560 350 600 322 Q624 304 640 292" fill="none" stroke="#0e5d52" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/>
-
-          <!-- Mukinje village -->
-          <g fill="#f7f3ea" stroke="#8b7f63" stroke-width="1.4">
-            <rect x="378" y="546" width="13" height="10" rx="1.5"/>
-            <rect x="398" y="556" width="13" height="10" rx="1.5"/>
-            <rect x="380" y="566" width="13" height="10" rx="1.5"/>
-            <rect x="404" y="538" width="13" height="10" rx="1.5"/>
-          </g>
-
-          <!-- labels -->
-          <g font-family="Georgia, serif" font-style="italic" fill="#134238">
-            <text x="118" y="108" font-size="19">Prošćansko jezero</text>
-            <text x="505" y="368" font-size="21">Kozjak</text>
-            <text x="700" y="238" font-size="17">Lower Lakes</text>
-            <text x="842" y="212" font-size="16">Veliki slap</text>
-          </g>
-          <g font-family="Inter, sans-serif" fill="#2c3a30" opacity=".85">
-            <text x="352" y="602" font-size="15" font-weight="600" letter-spacing="2">MUKINJE</text>
-            <text x="30" y="700" font-size="13">← Split · Zadar</text>
-            <text x="898" y="232" font-size="13">Zagreb →</text>
-          </g>
-        </svg>
 
         <!-- clickable markers (positioned in % of the map box) -->
-        <button class="poi poi-e" style="left:80%;top:46%" data-poi="e1" aria-label="Entrance 1">1</button>
-        <button class="poi poi-e" style="left:48.5%;top:71.5%" data-poi="e2" aria-label="Entrance 2">2</button>
-        <button class="poi poi-st" style="left:72%;top:52%" data-poi="st1" aria-label="Train station St1">St1</button>
-        <button class="poi poi-st" style="left:41%;top:64%" data-poi="st2" aria-label="Train station St2">St2</button>
-        <button class="poi poi-st" style="left:21%;top:26%" data-poi="st3" aria-label="Train station St3">St3</button>
-        <button class="poi poi-p" style="left:45%;top:57.5%" data-poi="p1" aria-label="Boat dock P1">P1</button>
-        <button class="poi poi-p" style="left:51.5%;top:51.5%" data-poi="p2" aria-label="Boat dock P2">P2</button>
-        <button class="poi poi-p" style="left:63.5%;top:38.5%" data-poi="p3" aria-label="Boat dock P3">P3</button>
-        <button class="poi poi-slap" style="left:86%;top:33%" data-poi="slap" aria-label="Veliki slap — the Great Waterfall">▲</button>
-        <button class="poi poi-vm" style="left:40%;top:76%" data-poi="vm" aria-label="Villa Mukinja">
+        <button class="poi poi-e" style="left:93.2%;top:89.4%" data-poi="e1" aria-label="Entrance 1">1</button>
+        <button class="poi poi-e" style="left:62.5%;top:89.4%" data-poi="e2" aria-label="Entrance 2">2</button>
+        <button class="poi poi-st" style="left:77.8%;top:73.7%" data-poi="st1" aria-label="Train station St1">St1</button>
+        <button class="poi poi-st" style="left:55.4%;top:81.7%" data-poi="st2" aria-label="Train station St2">St2</button>
+        <button class="poi poi-st" style="left:31.4%;top:48.9%" data-poi="st3" aria-label="Train station St3">St3</button>
+        <button class="poi poi-p" style="left:54.5%;top:77.7%" data-poi="p1" aria-label="Boat dock P1">P1</button>
+        <button class="poi poi-p" style="left:56.2%;top:74.4%" data-poi="p2" aria-label="Boat dock P2">P2</button>
+        <button class="poi poi-p" style="left:75.6%;top:60.0%" data-poi="p3" aria-label="Boat dock P3">P3</button>
+        <button class="poi poi-slap" style="left:89.0%;top:74.3%" data-poi="slap" aria-label="Veliki slap — the Great Waterfall">▲</button>
+        <button class="poi poi-vm" style="left:36.4%;top:92.4%" data-poi="vm" aria-label="Villa Mukinja">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
         </button>
       </div></div>
@@ -384,7 +312,7 @@
   </button>
 </div>
 
-<script src="assets/js/main.js?v=8"></script>
+<script src="assets/js/main.js?v=10"></script>
 <script>
 /* Interactive park map */
 (function () {
