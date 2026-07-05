@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plitvice Lakes National Park — Visitor Guide &amp; Interactive Map | Villa Mukinja</title>
+<meta name="description" content="Plan your Plitvice Lakes visit: interactive park map with entrances, panoramic train stations (St1–St3) and electric boat docks (P1–P3), all lake tour programs, working hours and local tips — from Villa Mukinja, a 10-minute walk from Entrance 2.">
+<link rel="canonical" href="https://www.plitvice-lakes.com/park">
+<meta property="og:title" content="Plitvice Lakes National Park — Visitor Guide & Interactive Map">
+<meta property="og:description" content="Entrances, train & boat stations, tour programs and working hours — everything you need to plan a perfect day at the lakes.">
+<meta property="og:image" content="https://www.plitvice-lakes.com/assets/images/hero-nature-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/hero-nature-1.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/style.css?v=8">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Plitvice Lakes National Park",
+  "description": "UNESCO World Heritage site with 16 terraced lakes and over 90 waterfalls in central Croatia.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Plitvička Jezera", "addressCountry": "HR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 44.8654, "longitude": 15.5820 }
+}
+</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a class="brand" href="index.html" aria-label="Villa Mukinja home"><span class="name">Villa Mukinja</span><span class="sub">Plitvice Lakes · Croatia</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="park.html" class="active">The Park</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="wellness.html">Wellness</a>
+      <a href="activities.html">Activities</a>
+      <a href="contact.html">Location</a>
+      <a class="btn btn-primary" href="booking.html" data-book>Book Now</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="booking.html" data-book>Book Now</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="bg"><img src="assets/images/hero-nature-1.jpg" alt="Waterfalls of Plitvice Lakes National Park" width="1800" height="1013"></div>
+  <div class="container">
+    <div class="crumbs reveal"><a href="index.html">Home</a> <span>/</span> <span>The Park</span></div>
+    <span class="eyebrow reveal d1">UNESCO World Heritage</span>
+    <h1 class="reveal d2">Plitvice Lakes National Park</h1>
+  </div>
+</section>
+
+<!-- ============ QUICK FACTS ============ -->
+<section class="section--tight section--pine">
+  <div class="container">
+    <div class="stats">
+      <div class="stat reveal"><b data-count="16">0</b><span>Terraced lakes</span></div>
+      <div class="stat reveal d1"><b data-count="90" data-suffix="+">0</b><span>Waterfalls</span></div>
+      <div class="stat reveal d2"><b data-count="1979">0</b><span>UNESCO listed</span></div>
+      <div class="stat reveal d3"><b data-count="10" data-suffix=" min">0</b><span>Walk from the villa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Croatia's oldest national park</span>
+      <h2>Sixteen lakes, endlessly falling into each other</h2>
+      <p class="lead">A chain of terraced lakes in impossible shades of turquoise, joined by travertine waterfalls and wooden walkways that float just above the water. The park is open 365 days a year — and Villa Mukinja sits a ten-minute walk from Entrance 2, closer than any hotel car park.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERACTIVE MAP ============ -->
+<section class="section section--cream2" id="map">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Interactive Map</span>
+      <h2>Find your way around the lakes</h2>
+      <p class="lead">Tap any point — entrances, panoramic train stations, boat docks or Villa Mukinja — to see what it is, when it runs and how it fits your day.</p>
+    </div>
+
+    <div class="park-legend reveal" role="list">
+      <span role="listitem"><i class="lg lg-e"></i> Entrances</span>
+      <span role="listitem"><i class="lg lg-st"></i> Panoramic train</span>
+      <span role="listitem"><i class="lg lg-p"></i> Electric boat</span>
+      <span role="listitem"><i class="lg lg-vm"></i> Villa Mukinja</span>
+    </div>
+
+    <div class="park-map-wrap reveal">
+      <p class="park-swipe-hint">↔ Swipe the map to explore</p>
+      <div class="park-scroll" id="park-scroll"><div class="park-map" id="park-map">
+        <svg viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="lakeg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#8fd8cc"/><stop offset="1" stop-color="#2f9d8a"/>
+            </linearGradient>
+            <linearGradient id="terr" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#b9d2a5"/><stop offset="1" stop-color="#87b283"/>
+            </linearGradient>
+          </defs>
+
+          <!-- terrain -->
+          <rect x="0" y="0" width="1000" height="720" rx="18" fill="url(#terr)"/>
+          <path d="M0 240 Q140 140 300 190 Q420 230 520 160 Q660 70 830 130 L1000 90 L1000 0 L0 0 Z" fill="#6f9e6f" opacity=".55"/>
+          <path d="M0 720 Q220 640 430 660 Q660 685 1000 600 L1000 720 Z" fill="#57855c" opacity=".5"/>
+          <path d="M620 0 Q700 120 860 150 Q950 165 1000 150 L1000 0 Z" fill="#7fae7d" opacity=".6"/>
+          <!-- forest dots -->
+          <g fill="#3f6d49" opacity=".35">
+            <circle cx="120" cy="330" r="10"/><circle cx="160" cy="360" r="8"/><circle cx="90" cy="420" r="12"/>
+            <circle cx="640" cy="560" r="10"/><circle cx="700" cy="590" r="8"/><circle cx="760" cy="540" r="11"/>
+            <circle cx="880" cy="430" r="9"/><circle cx="300" cy="120" r="9"/><circle cx="560" cy="90" r="10"/>
+            <circle cx="240" cy="520" r="9"/><circle cx="60" cy="180" r="9"/><circle cx="930" cy="560" r="10"/>
+          </g>
+
+          <!-- main road (D1): Split/Zadar -> Mukinje -> E2 -> E1 -> Zagreb -->
+          <path d="M40 665 Q220 620 340 585 Q400 566 440 545 Q470 528 480 505 Q505 470 585 462 Q680 452 730 415 Q780 372 800 331 Q830 280 900 262 Q950 250 990 246"
+                fill="none" stroke="#f3ecd9" stroke-width="13" stroke-linecap="round" opacity=".95"/>
+          <path d="M40 665 Q220 620 340 585 Q400 566 440 545 Q470 528 480 505 Q505 470 585 462 Q680 452 730 415 Q780 372 800 331 Q830 280 900 262 Q950 250 990 246"
+                fill="none" stroke="#c9bd9d" stroke-width="2" stroke-dasharray="8 10" opacity=".8"/>
+
+          <!-- panoramic train road: St3 -> St2 -> St1 -->
+          <path d="M200 115 Q210 190 250 255 Q300 330 360 385 Q400 425 430 446 Q500 486 560 468 Q650 442 720 374"
+                fill="none" stroke="#e5b83d" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+
+          <!-- upper lakes: Prošćansko + chain to Kozjak -->
+          <path d="M165 130 Q205 120 225 160 Q240 195 262 225 Q280 250 268 268 Q250 285 228 262 Q195 230 175 195 Q152 160 165 130 Z" fill="url(#lakeg)"/>
+          <path d="M268 268 Q296 282 310 308 Q322 330 344 344 Q332 360 312 350 Q286 336 274 312 Q262 292 268 268 Z" fill="url(#lakeg)"/>
+          <path d="M344 344 Q372 358 388 382 Q402 402 424 414 Q414 432 392 422 Q366 410 352 386 Q340 366 344 344 Z" fill="url(#lakeg)"/>
+
+          <!-- Kozjak -->
+          <path d="M424 414 Q446 398 478 396 Q520 394 552 366 Q590 334 622 306 Q648 284 640 288 Q664 272 656 300 Q646 330 606 362 Q566 394 528 416 Q490 438 458 434 Q432 430 424 414 Z" fill="url(#lakeg)"/>
+
+          <!-- lower lakes canyon to Veliki slap -->
+          <path d="M652 292 Q676 274 700 268 Q730 260 756 254 Q792 246 826 242 Q850 240 862 238 Q850 252 824 256 Q790 262 758 268 Q726 276 702 284 Q676 292 652 292 Z" fill="url(#lakeg)"/>
+
+          <!-- waterfall ticks between lakes -->
+          <g stroke="#eafaf6" stroke-width="3" stroke-linecap="round" opacity=".95">
+            <path d="M266 266 l8 8"/><path d="M342 342 l8 8"/><path d="M422 412 l8 6"/>
+            <path d="M650 292 l8 -6"/><path d="M756 258 l4 8"/><path d="M824 246 l4 8"/>
+          </g>
+          <!-- Veliki slap fall -->
+          <path d="M862 226 q4 12 0 24" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+          <!-- boat routes -->
+          <path d="M465 410 Q482 400 500 389" fill="none" stroke="#0e5d52" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/>
+          <path d="M500 389 Q560 350 600 322 Q624 304 640 292" fill="none" stroke="#0e5d52" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/>
+
+          <!-- Mukinje village -->
+          <g fill="#f7f3ea" stroke="#8b7f63" stroke-width="1.4">
+            <rect x="378" y="546" width="13" height="10" rx="1.5"/>
+            <rect x="398" y="556" width="13" height="10" rx="1.5"/>
+            <rect x="380" y="566" width="13" height="10" rx="1.5"/>
+            <rect x="404" y="538" width="13" height="10" rx="1.5"/>
+          </g>
+
+          <!-- labels -->
+          <g font-family="Georgia, serif" font-style="italic" fill="#134238">
+            <text x="118" y="108" font-size="19">Prošćansko jezero</text>
+            <text x="505" y="368" font-size="21">Kozjak</text>
+            <text x="700" y="238" font-size="17">Lower Lakes</text>
+            <text x="842" y="212" font-size="16">Veliki slap</text>
+          </g>
+          <g font-family="Inter, sans-serif" fill="#2c3a30" opacity=".85">
+            <text x="352" y="602" font-size="15" font-weight="600" letter-spacing="2">MUKINJE</text>
+            <text x="30" y="700" font-size="13">← Split · Zadar</text>
+            <text x="898" y="232" font-size="13">Zagreb →</text>
+          </g>
+        </svg>
+
+        <!-- clickable markers (positioned in % of the map box) -->
+        <button class="poi poi-e" style="left:80%;top:46%" data-poi="e1" aria-label="Entrance 1">1</button>
+        <button class="poi poi-e" style="left:48.5%;top:71.5%" data-poi="e2" aria-label="Entrance 2">2</button>
+        <button class="poi poi-st" style="left:72%;top:52%" data-poi="st1" aria-label="Train station St1">St1</button>
+        <button class="poi poi-st" style="left:41%;top:64%" data-poi="st2" aria-label="Train station St2">St2</button>
+        <button class="poi poi-st" style="left:21%;top:26%" data-poi="st3" aria-label="Train station St3">St3</button>
+        <button class="poi poi-p" style="left:45%;top:57.5%" data-poi="p1" aria-label="Boat dock P1">P1</button>
+        <button class="poi poi-p" style="left:51.5%;top:51.5%" data-poi="p2" aria-label="Boat dock P2">P2</button>
+        <button class="poi poi-p" style="left:63.5%;top:38.5%" data-poi="p3" aria-label="Boat dock P3">P3</button>
+        <button class="poi poi-slap" style="left:86%;top:33%" data-poi="slap" aria-label="Veliki slap — the Great Waterfall">▲</button>
+        <button class="poi poi-vm" style="left:40%;top:76%" data-poi="vm" aria-label="Villa Mukinja">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+        </button>
+      </div></div>
+
+      <aside class="poi-card" id="poi-card" aria-live="polite">
+        <h3 id="poi-title">Welcome to the lakes</h3>
+        <p class="poi-tag" id="poi-tag">Tap a marker to explore</p>
+        <p id="poi-desc">Entrances, panoramic train stations (St1–St3) and electric boat docks (P1–P3) — every point on the map is clickable. The gold pin is us: Villa Mukinja, your home base in Mukinje village.</p>
+        <div class="poi-hours" id="poi-hours" hidden>
+          <b>Working hours</b>
+          <ul id="poi-hours-list"></ul>
+        </div>
+        <a class="btn btn-primary cta-primary" id="poi-btn" href="booking.html" data-book hidden>Book your stay</a>
+      </aside>
+    </div>
+
+    <p class="park-note reveal">Summer schedule shown — in winter the park runs shorter hours and the boat/train may pause. Always check <a href="https://np-plitvicka-jezera.hr/en/" target="_blank" rel="noopener"><strong>np-plitvicka-jezera.hr</strong></a> for today's conditions.</p>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Lake Tour Programs</span>
+      <h2>Pick the loop that fits your day</h2>
+      <p class="lead">The park offers marked circular programs from both entrances — from an easy two-hour stroll to a full-day hike. Staying with us? Entrance 2 programs start a ten-minute walk from your bed.</p>
+    </div>
+
+    <div class="prog-group reveal">
+      <h3 class="prog-head">From Entrance 1 <span>· Lower Lakes side</span></h3>
+      <div class="grid grid-4">
+        <article class="card"><div class="card-body">
+          <h3>Program A</h3><p>The Great Waterfall and the Lower Lakes canyon on foot.</p>
+          <div class="card-meta"><span class="chip">2–3 h</span><span class="chip">3.5 km</span><span class="chip">Walking</span></div>
+        </div></article>
+        <article class="card"><div class="card-body">
+          <h3>Program B</h3><p>Lower Lakes plus the electric boat across Lake Kozjak and a panoramic train ride back.</p>
+          <div class="card-meta"><span class="chip">3–4 h</span><span class="chip">4 km</span><span class="chip">Boat + train</span></div>
+        </div></article>
+        <article class="card"><div class="card-body">
+          <h3>Program C</h3><p>Lower and Upper Lakes with the most attractive waterfalls, returning by boat and train.</p>
+          <div class="card-meta"><span class="chip">4–5 h</span><span class="chip">8 km</span><span class="chip">Boat + train</span></div>
+        </div></article>
+        <article class="card"><div class="card-body">
+          <h3>Program K1</h3><p>The complete lake zone on foot, including the Tomićevo pogledalo viewpoint. For strong walkers.</p>
+          <div class="card-meta"><span class="chip">6–8 h</span><span class="chip">16.5 km</span><span class="chip">Hike</span></div>
+        </div></article>
+      </div>
+    </div>
+
+    <div class="prog-group reveal">
+      <h3 class="prog-head">From Entrance 2 <span>· 10 minutes from Villa Mukinja</span></h3>
+      <div class="grid grid-4">
+        <article class="card"><div class="card-body">
+          <h3>Program E <span class="card-tag" style="position:static;margin-left:6px">Our tip</span></h3>
+          <p>The Upper Lakes at an easy pace, with a short boat ride across Kozjak and the train back.</p>
+          <div class="card-meta"><span class="chip">2–3 h</span><span class="chip">5.1 km</span><span class="chip">Boat + train</span></div>
+        </div></article>
+        <article class="card"><div class="card-body">
+          <h3>Program F</h3><p>Boat across Kozjak, then the Lower Lakes canyon to the Great Waterfall and its serpentine viewpoints.</p>
+          <div class="card-meta"><span class="chip">3–4 h</span><span class="chip">4.6 km</span><span class="chip">Boat + train</span></div>
+        </div></article>
+        <article class="card"><div class="card-body">
+          <h3>Program H</h3><p>The whole lake area — Upper and Lower Lakes — combining train, boat and beautiful walking.</p>
+          <div class="card-meta"><span class="chip">4–6 h</span><span class="chip">8.9 km</span><span class="chip">Train + boat</span></div>
+        </div></article>
+        <article class="card"><div class="card-body">
+          <h3>Program K2</h3><p>The full-day grand tour on foot from the southern side, viewpoint included.</p>
+          <div class="card-meta"><span class="chip">6–8 h</span><span class="chip">17.5 km</span><span class="chip">Hike</span></div>
+        </div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOURS & TICKETS ============ -->
+<section class="section section--cream2">
+  <div class="container">
+    <div class="split" style="align-items:start">
+      <div class="reveal">
+        <span class="eyebrow">Hours &amp; Tickets</span>
+        <h2>When the park runs</h2>
+        <ul class="feature-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <strong>Open 365 days a year</strong> — entrances 07:00–20:00 in summer, shorter off-season</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ticket sales end at <strong>17:00</strong>; parking open 07:00–21:00</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Seasonal prices: roughly <strong>€10 winter · €23.50 shoulder · €40 summer</strong> per adult</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <strong>Buy online in advance</strong> in high season — entry slots sell out</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Train &amp; boat rides are <strong>included in the park ticket</strong></li>
+        </ul>
+        <a class="btn btn-dark" href="https://np-plitvicka-jezera.hr/en/" target="_blank" rel="noopener" style="margin-top:var(--s2)">Official Park Website</a>
+      </div>
+      <div class="reveal d1">
+        <div class="form-card">
+          <h3 style="margin-bottom:var(--s3)">Summer transport timetable</h3>
+          <div class="hours-table">
+            <div class="hrow hhead"><span>Panoramic train</span><span>Every 30 min</span></div>
+            <div class="hrow"><span>St2 → St1</span><span>08:00 – 19:45</span></div>
+            <div class="hrow"><span>St1 → St2</span><span>08:15 – 20:00</span></div>
+            <div class="hrow"><span>St2 → St3</span><span>07:30 – 19:00</span></div>
+            <div class="hrow"><span>St3 → St2</span><span>08:00 – 19:30</span></div>
+            <div class="hrow hhead" style="margin-top:var(--s2)"><span>Electric boat</span><span></span></div>
+            <div class="hrow"><span>P1 ↔ P2 (short hop)</span><span>07:00 – 20:00</span></div>
+            <div class="hrow"><span>P2 → P3 (across Kozjak)</span><span>08:00 – 18:00</span></div>
+            <div class="hrow"><span>P3 → P2</span><span>08:30 – 18:30</span></div>
+          </div>
+          <p class="form-note" style="margin-top:var(--s3)">Source: official park working hours. Off-season schedules are shorter — check before you set out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Local Knowledge</span>
+      <h2>Tips from your hosts</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="amenity reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Beat the crowds</h3><p>Enter before 9:00 or after 15:00 — tour buses own the middle of the day in summer.</p></div>
+      <div class="amenity reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M6 17V9l6-5 6 5v8"/></svg></div><h3>Start at Entrance 2</h3><p>It's a ten-minute walk from the villa, with the calmest morning queues and direct Upper Lakes access.</p></div>
+      <div class="amenity reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div><h3>Good shoes, no drone</h3><p>Boardwalks get slippery; sturdy soles help. Drones and swimming are not allowed in the park.</p></div>
+      <div class="amenity reveal d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></div><h3>Fuel up first</h3><p>Add our home-made breakfast the evening before — food inside the park is scarce and pricey.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-band">
+  <div class="bg"><img src="assets/images/hero-nature-3.jpg" alt="" loading="lazy" aria-hidden="true"></div>
+  <div class="container">
+    <span class="eyebrow center reveal">Sleep next to the lakes</span>
+    <h2 class="reveal d1">Wake up ten minutes from Entrance 2</h2>
+    <p class="lead reveal d2">Stay at Villa Mukinja and walk into the park before the buses arrive — then come home to the sauna and hot tub.</p>
+    <div class="hero-actions reveal d3">
+      <a class="btn btn-primary btn-lg cta-primary" href="booking.html" data-book>Check Availability</a>
+      <a class="btn btn-outline btn-lg whatsapp-link" href="https://wa.me/385997877479" target="_blank" rel="noopener">Ask Us Anything</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:var(--s3)"><span class="name">Villa Mukinja</span><span class="sub">Plitvice Lakes · Croatia</span></a>
+        <p>A family-run guesthouse and wellness retreat, a ten-minute walk from Plitvice Lakes National Park. Comfortable beds, a free sauna and hot tub, and a home-made breakfast worth waking up for.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/villa.mukinja/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="https://www.instagram.com/villamukinja" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="https://wa.me/385997877479" target="_blank" rel="noopener" aria-label="WhatsApp" class="whatsapp-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="park.html">The National Park</a></li>
+          <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+          <li><a href="wellness.html">Wellness &amp; Spa</a></li>
+          <li><a href="activities.html">Activities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="contact.html">Location</a></li>
+          <li><a href="booking.html" data-book>Book a Stay</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Mukinje 47, 53231<br>Plitvička Jezera, Croatia</span></div>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><a href="tel:+385997877479">+385 99 7877 479</a></div>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><a href="https://wa.me/385997877479" target="_blank" rel="noopener" class="whatsapp-link">Message us on WhatsApp</a></div>
+        <a class="btn btn-primary cta-primary" href="booking.html" data-book style="margin-top:var(--s2)">Book Now</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Villa Mukinja. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Crafted with care in Croatia</span>
+    </div>
+  </div>
+</footer>
+
+<div class="chat-fab" id="chat-fab">
+  <div class="chat-fab-options">
+    <a class="fab-opt fab-wa whatsapp-link" href="https://wa.me/385997877479" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>WhatsApp</span></a>
+    <a class="fab-opt fab-call" href="tel:+385997877479"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>Call us</span></a>
+  </div>
+  <button class="chat-fab-btn" aria-label="Contact us" aria-expanded="false" type="button">
+    <svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+</div>
+
+<script src="assets/js/main.js?v=8"></script>
+<script>
+/* Interactive park map */
+(function () {
+  var DATA = {
+    e1: { tag: "Park entrance · north", title: "Entrance 1 (Rastovača)", desc: "The northern gate, beside the Lower Lakes canyon and the Great Waterfall. Programs A, B, C and K1 start here. About 5 minutes by car from Villa Mukinja.", hours: ["Entrance: 07:00 – 20:00 (summer)", "Ticket sales until 17:00"] },
+    e2: { tag: "Park entrance · south", title: "Entrance 2 (Hladovina)", desc: "The southern gate and the closest one to us — a 10-minute walk from Villa Mukinja. Programs E, F, H and K2 start here, with direct access to the Upper Lakes and boat dock P1.", hours: ["Entrance: 07:00 – 20:00 (summer)", "Ticket sales until 17:00"] },
+    st1: { tag: "Panoramic train station", title: "Station St1", desc: "The Lower Lakes station of the panoramic road-train, near Entrance 1. Ride the ridge back toward St2 instead of retracing your steps.", hours: ["St1 → St2: 08:15 – 20:00, every 30 min", "St2 → St1: 08:00 – 19:45, every 30 min"] },
+    st2: { tag: "Panoramic train station · hub", title: "Station St2", desc: "The central hub above Entrance 2 — trains run from here in both directions: north to St1 (Lower Lakes) and south to St3 (Upper Lakes).", hours: ["St2 → St1: 08:00 – 19:45, every 30 min", "St2 → St3: 07:30 – 19:00, every 30 min"] },
+    st3: { tag: "Panoramic train station", title: "Station St3", desc: "The Upper Lakes terminus by Prošćansko jezero. (If you knew the park before: this is the former St4 — the old St3 stop no longer exists.)", hours: ["St3 → St2: 08:00 – 19:30, every 30 min", "St2 → St3: 07:30 – 19:00, every 30 min"] },
+    p1: { tag: "Electric boat dock", title: "Dock P1", desc: "The dock on the Entrance 2 side of Lake Kozjak. A silent two-minute hop connects it with P2 across the bay, all day long.", hours: ["P1 ↔ P2: 07:00 – 20:00, as needed"] },
+    p2: { tag: "Electric boat dock", title: "Dock P2", desc: "Departure point for the beautiful 20-minute glide down Lake Kozjak to P3 and the Lower Lakes — many guests' favourite moment of the day.", hours: ["P2 → P3: 08:00 – 18:00, every 30 min"] },
+    p3: { tag: "Electric boat dock", title: "Dock P3", desc: "The northern dock where Kozjak narrows into the Lower Lakes canyon. Step off the boat and the walkways to the Great Waterfall begin.", hours: ["P3 → P2: 08:30 – 18:30, every 30 min"] },
+    slap: { tag: "Natural landmark", title: "Veliki slap — the Great Waterfall", desc: "Croatia's tallest waterfall, 78 metres of free-falling water at the end of the Lower Lakes canyon. Best light in the morning; reach it from Entrance 1 or via P3.", hours: [] },
+    vm: { tag: "Your home base", title: "Villa Mukinja", desc: "Our family guesthouse in Mukinje village — a 10-minute walk from Entrance 2, with free parking, sauna and hot tub waiting after your lake day.", hours: [], book: true }
+  };
+  var map = document.getElementById("park-map");
+  if (!map) return;
+  var titleEl = document.getElementById("poi-title"), tagEl = document.getElementById("poi-tag"),
+      descEl = document.getElementById("poi-desc"), hoursWrap = document.getElementById("poi-hours"),
+      hoursList = document.getElementById("poi-hours-list"), btn = document.getElementById("poi-btn");
+  // on phones, start the pannable map centred on Villa Mukinja
+  var scroller = document.getElementById("park-scroll");
+  if (scroller && window.matchMedia("(max-width: 700px)").matches) {
+    var vm = map.querySelector('[data-poi="vm"]');
+    requestAnimationFrame(function () {
+      scroller.scrollLeft = Math.max(0, vm.offsetLeft - scroller.clientWidth / 2);
+    });
+  }
+  map.addEventListener("click", function (e) {
+    var poi = e.target.closest(".poi");
+    if (!poi) return;
+    var d = DATA[poi.dataset.poi];
+    if (!d) return;
+    map.querySelectorAll(".poi.active").forEach(function (p) { p.classList.remove("active"); });
+    poi.classList.add("active");
+    titleEl.textContent = d.title;
+    tagEl.textContent = d.tag;
+    descEl.textContent = d.desc;
+    hoursList.innerHTML = "";
+    d.hours.forEach(function (h) { var li = document.createElement("li"); li.textContent = h; hoursList.appendChild(li); });
+    hoursWrap.hidden = d.hours.length === 0;
+    btn.hidden = !d.book;
+    if (window.dataLayer) window.dataLayer.push({ event: "park_map_poi", poi: poi.dataset.poi });
+    var card = document.getElementById("poi-card");
+    if (window.matchMedia("(max-width: 860px)").matches) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+})();
+</script>
+</body>
+</html>

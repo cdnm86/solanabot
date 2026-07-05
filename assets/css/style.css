@@ -577,3 +577,90 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; max-width: 100vw; }
 .rbe-panel p { color: rgba(255,255,255,.85); max-width: 520px; margin: 0 auto var(--s4); }
 .rbe-panel .eyebrow { color: var(--brass); justify-content: center; }
 .rbe-panel .eyebrow::before, .rbe-panel .eyebrow.center::after { background: var(--brass); }
+
+/* ===================================================================
+   Park page: interactive map, programs, hours
+   =================================================================== */
+.park-legend { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4); justify-content: center; margin-bottom: var(--s3); font-size: .9rem; color: var(--ink); }
+.park-legend .lg { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 7px; vertical-align: -2px; }
+.lg-e { background: #1f6f5c; }
+.lg-st { background: #e5b83d; }
+.lg-p { background: #0e5d52; }
+.lg-vm { background: var(--brass); box-shadow: 0 0 0 3px rgba(194,161,99,.3); }
+
+.park-map-wrap { display: grid; grid-template-columns: 1.7fr 1fr; gap: var(--s4); align-items: start; }
+.park-map { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.park-map svg { display: block; width: 100%; height: auto; }
+
+.poi {
+  position: absolute; transform: translate(-50%, -50%);
+  min-width: 40px; height: 40px; padding: 0 8px; border-radius: 999px;
+  display: grid; place-content: center;
+  font-weight: 700; font-size: .82rem; letter-spacing: .02em; color: #fff;
+  box-shadow: 0 6px 16px -6px rgba(0,0,0,.55), 0 0 0 2.5px rgba(255,255,255,.85);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  cursor: pointer;
+}
+.poi:hover { transform: translate(-50%, -50%) scale(1.12); }
+.poi.active { transform: translate(-50%, -50%) scale(1.18); box-shadow: 0 8px 22px -6px rgba(0,0,0,.6), 0 0 0 3.5px var(--cream); }
+.poi-e { background: #1f6f5c; }
+.poi-st { background: #c79a1f; }
+.poi-p { background: #0e5d52; }
+.poi-slap { background: #4f79a8; font-size: .7rem; }
+.poi-vm { background: var(--brass); color: var(--pine); width: 48px; height: 48px; }
+.poi-vm svg { width: 26px; height: 26px; }
+.poi-vm::after {
+  content: ""; position: absolute; inset: -7px; border-radius: 50%;
+  border: 2px solid var(--brass); animation: vmPulse 2s var(--ease) infinite;
+}
+@keyframes vmPulse { 0% { transform: scale(.85); opacity: .9; } 100% { transform: scale(1.35); opacity: 0; } }
+
+.poi-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: var(--s4); box-shadow: var(--shadow-s); position: sticky; top: calc(var(--header-h) + var(--s2));
+}
+.poi-card h3 { color: var(--pine); margin-bottom: 4px; }
+.poi-card .poi-tag { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--brass-deep); margin-bottom: var(--s2); font-weight: 600; }
+.poi-card p { font-size: .95rem; }
+.poi-hours { margin-top: var(--s3); background: rgba(47,125,107,.08); border-radius: var(--radius-s); padding: var(--s2) var(--s3); }
+.poi-hours b { color: var(--pine); font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+.poi-hours ul { margin-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+.poi-hours li { font-size: .9rem; color: var(--ink); }
+.poi-card .btn { margin-top: var(--s3); }
+.park-note { text-align: center; font-size: .92rem; opacity: .85; max-width: 640px; margin: var(--s4) auto 0; }
+.park-note a { color: var(--brass-deep); }
+
+.prog-group { margin-top: var(--s5); }
+.prog-head { margin-bottom: var(--s3); color: var(--pine); }
+.prog-head span { font-family: var(--font-body); font-size: .85rem; color: var(--brass-deep); font-weight: 600; letter-spacing: .04em; }
+
+.hours-table .hrow { display: flex; justify-content: space-between; gap: var(--s2); padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.hours-table .hrow span:last-child { font-variant-numeric: tabular-nums; color: var(--pine); font-weight: 600; white-space: nowrap; }
+.hours-table .hhead { border-bottom: 2px solid var(--brass); color: var(--brass-deep); font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: .08em; }
+.hours-table .hhead span:last-child { color: var(--brass-deep); font-weight: 700; }
+
+@media (max-width: 860px) {
+  .park-map-wrap { grid-template-columns: 1fr; }
+  .poi-card { position: static; }
+  .poi { min-width: 34px; height: 34px; font-size: .72rem; }
+  .poi-vm { width: 42px; height: 42px; }
+  .poi-vm svg { width: 22px; height: 22px; }
+}
+
+/* park map: smaller markers on mid-size screens to avoid crowding */
+@media (max-width: 1200px) {
+  .poi { min-width: 33px; height: 33px; font-size: .7rem; }
+  .poi-vm { width: 42px; height: 42px; }
+  .poi-vm svg { width: 22px; height: 22px; }
+}
+
+/* park map: pannable on small screens so markers stay tappable */
+.park-scroll { border-radius: var(--radius); }
+.park-swipe-hint { display: none; }
+@media (max-width: 700px) {
+  .park-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; box-shadow: var(--shadow); }
+  .park-scroll::-webkit-scrollbar { display: none; }
+  .park-map { min-width: 720px; box-shadow: none; }
+  .poi { min-width: 38px; height: 38px; font-size: .78rem; }
+  .park-swipe-hint { display: block; grid-column: 1 / -1; text-align: center; font-size: .82rem; color: var(--brass-deep); font-weight: 600; letter-spacing: .04em; margin-bottom: var(--s1); }
+}
