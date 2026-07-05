@@ -685,3 +685,86 @@ html, body { overflow-x: clip; overscroll-behavior-x: none; max-width: 100vw; }
   background: #33582f; box-shadow: 0 0 10px 6px rgba(51,88,47,.95);
   pointer-events: none; opacity: .96;
 }
+
+/* ===================================================================
+   Park map v2 — full-width desktop, on-map bubbles, mobile fullscreen
+   =================================================================== */
+/* neutralise the old two-column layout & pannable behaviour */
+.park-map-wrap { display: block; }
+.park-scroll { overflow: visible; }
+.park-map { min-width: 0; }
+.park-frame { position: relative; border-radius: var(--radius); }
+.park-map { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+
+/* smaller pins on desktop (map is now full width) */
+.poi { min-width: 30px; height: 30px; padding: 0 6px; font-size: .66rem; }
+.poi-vm { width: 38px; height: 38px; }
+.poi-vm svg { width: 20px; height: 20px; }
+.poi-slap { font-size: .6rem; }
+
+/* info bubble rendered on the map itself */
+.map-bubble {
+  position: absolute; z-index: 20; width: clamp(230px, 34%, 330px);
+  background: rgba(255,253,248,.97); border-radius: var(--radius-s);
+  box-shadow: 0 18px 50px -12px rgba(0,0,0,.5); border: 1px solid var(--line);
+  padding: var(--s2) var(--s3) var(--s3);
+}
+.map-bubble .mb-close { position: absolute; top: 6px; right: 8px; font-size: .9rem; color: var(--muted); padding: 4px; }
+.map-bubble .mb-close:hover { color: var(--pine); }
+.map-bubble .mb-tag { font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--brass-deep); font-weight: 700; margin: 0 0 2px; }
+.map-bubble h3 { font-size: 1.25rem; color: var(--pine); margin: 0 0 4px; }
+.map-bubble p { font-size: .84rem; line-height: 1.5; margin: 0 0 6px; }
+.map-bubble ul { margin: 6px 0 0; padding: 8px 10px; background: rgba(47,125,107,.09); border-radius: 6px; }
+.map-bubble li { font-size: .78rem; color: var(--ink); }
+.map-bubble .btn { margin-top: 10px; padding: 10px 18px; font-size: .84rem; }
+.map-bubble.corner { top: 10px; right: 10px; left: auto !important; }
+
+/* ---------- Mobile: static preview + tap to open fullscreen ---------- */
+@media (max-width: 860px) {
+  .park-frame { cursor: zoom-in; }
+  /* tiny, non-interactive dots on the inline preview */
+  .park-map .poi {
+    min-width: 13px; height: 13px; padding: 0; font-size: 0;
+    pointer-events: none; box-shadow: 0 0 0 1.5px rgba(255,255,255,.9);
+  }
+  .park-map .poi-vm { width: 19px; height: 19px; }
+  .park-map .poi-vm svg { width: 11px; height: 11px; }
+  .park-map .poi-vm::after { inset: -4px; }
+  .park-map .map-bubble { display: none; }
+
+  /* fullscreen overlay */
+  body.fs-map-open { overflow: hidden; }
+  body.fs-map-open .park-frame {
+    position: fixed; inset: 0; z-index: 300; background: rgba(8,14,10,.96);
+    border-radius: 0; cursor: default;
+  }
+  body.fs-map-open .park-map {
+    position: absolute; top: 50%; left: 50%;
+    border-radius: 10px;
+  }
+  /* rotate to landscape when the phone is held upright */
+  @media (orientation: portrait) {
+    /* rotated 90°: element width = visual height (≤96vh), element height = visual width (≤96vw) */
+    body.fs-map-open .park-map { width: min(96vh, 136vw); max-width: none; transform: translate(-50%, -50%) rotate(90deg); }
+  }
+  @media (orientation: landscape) {
+    body.fs-map-open .park-map { width: min(96vw, 132vh); transform: translate(-50%, -50%); }
+  }
+  /* pins become tappable again in fullscreen */
+  body.fs-map-open .park-map .poi {
+    pointer-events: auto; min-width: 30px; height: 30px; padding: 0 6px; font-size: .62rem;
+    box-shadow: 0 4px 12px -4px rgba(0,0,0,.5), 0 0 0 2px rgba(255,255,255,.85);
+  }
+  body.fs-map-open .park-map .poi-vm { width: 38px; height: 38px; }
+  body.fs-map-open .park-map .poi-vm svg { width: 20px; height: 20px; }
+  body.fs-map-open .park-map .map-bubble { display: block; width: clamp(200px, 38%, 290px); }
+  body.fs-map-open .park-map .map-bubble p { font-size: .78rem; }
+  body.fs-map-open .park-map .map-bubble h3 { font-size: 1.1rem; }
+}
+
+.fs-close {
+  position: fixed; top: 14px; right: 14px; z-index: 320;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(247,243,234,.95); color: var(--pine);
+  font-size: 1.05rem; box-shadow: 0 8px 24px -8px rgba(0,0,0,.6);
+}

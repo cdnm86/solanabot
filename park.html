@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/images/hero-nature-1.jpg" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/style.css?v=10">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,39 +95,40 @@
     </div>
 
     <div class="park-map-wrap reveal">
-      <p class="park-swipe-hint">↔ Swipe the map to explore</p>
-      <div class="park-scroll" id="park-scroll"><div class="park-map" id="park-map">
-        <img src="assets/images/park-map.jpg?v=1" alt="Hand-painted panoramic map of Plitvice Lakes National Park with entrances, train and boat stations" width="1636" height="1150">
+      <p class="park-swipe-hint">Tap the map to open it fullscreen</p>
+      <div class="park-frame" id="park-frame">
+        <div class="park-map" id="park-map">
+          <img src="assets/images/park-map.jpg?v=1" alt="Hand-painted panoramic map of Plitvice Lakes National Park with entrances, train and boat stations" width="1636" height="1150">
 
-        <!-- covers the printed old St3 badge (station no longer exists) -->
-        <span class="poi-cover" style="left:43.4%;top:66.3%" aria-hidden="true"></span>
+          <!-- covers the printed old St3 badge (station no longer exists) -->
+          <span class="poi-cover" style="left:43.4%;top:66.3%" aria-hidden="true"></span>
 
+          <!-- clickable markers (positioned in % of the map box) -->
+          <button class="poi poi-e" style="left:93.2%;top:89.4%" data-poi="e1" aria-label="Entrance 1">1</button>
+          <button class="poi poi-e" style="left:62.5%;top:89.4%" data-poi="e2" aria-label="Entrance 2">2</button>
+          <button class="poi poi-st" style="left:77.8%;top:73.7%" data-poi="st1" aria-label="Train station St1">St1</button>
+          <button class="poi poi-st" style="left:55.4%;top:81.7%" data-poi="st2" aria-label="Train station St2">St2</button>
+          <button class="poi poi-st" style="left:31.4%;top:48.9%" data-poi="st3" aria-label="Train station St3">St3</button>
+          <button class="poi poi-p" style="left:54.5%;top:77.7%" data-poi="p1" aria-label="Boat dock P1">P1</button>
+          <button class="poi poi-p" style="left:56.2%;top:74.4%" data-poi="p2" aria-label="Boat dock P2">P2</button>
+          <button class="poi poi-p" style="left:75.6%;top:60.0%" data-poi="p3" aria-label="Boat dock P3">P3</button>
+          <button class="poi poi-slap" style="left:89.0%;top:74.3%" data-poi="slap" aria-label="Veliki slap — the Great Waterfall">▲</button>
+          <button class="poi poi-vm" style="left:36.4%;top:92.4%" data-poi="vm" aria-label="Villa Mukinja">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          </button>
 
-        <!-- clickable markers (positioned in % of the map box) -->
-        <button class="poi poi-e" style="left:93.2%;top:89.4%" data-poi="e1" aria-label="Entrance 1">1</button>
-        <button class="poi poi-e" style="left:62.5%;top:89.4%" data-poi="e2" aria-label="Entrance 2">2</button>
-        <button class="poi poi-st" style="left:77.8%;top:73.7%" data-poi="st1" aria-label="Train station St1">St1</button>
-        <button class="poi poi-st" style="left:55.4%;top:81.7%" data-poi="st2" aria-label="Train station St2">St2</button>
-        <button class="poi poi-st" style="left:31.4%;top:48.9%" data-poi="st3" aria-label="Train station St3">St3</button>
-        <button class="poi poi-p" style="left:54.5%;top:77.7%" data-poi="p1" aria-label="Boat dock P1">P1</button>
-        <button class="poi poi-p" style="left:56.2%;top:74.4%" data-poi="p2" aria-label="Boat dock P2">P2</button>
-        <button class="poi poi-p" style="left:75.6%;top:60.0%" data-poi="p3" aria-label="Boat dock P3">P3</button>
-        <button class="poi poi-slap" style="left:89.0%;top:74.3%" data-poi="slap" aria-label="Veliki slap — the Great Waterfall">▲</button>
-        <button class="poi poi-vm" style="left:36.4%;top:92.4%" data-poi="vm" aria-label="Villa Mukinja">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
-        </button>
-      </div></div>
-
-      <aside class="poi-card" id="poi-card" aria-live="polite">
-        <h3 id="poi-title">Welcome to the lakes</h3>
-        <p class="poi-tag" id="poi-tag">Tap a marker to explore</p>
-        <p id="poi-desc">Entrances, panoramic train stations (St1–St3) and electric boat docks (P1–P3) — every point on the map is clickable. The gold pin is us: Villa Mukinja, your home base in Mukinje village.</p>
-        <div class="poi-hours" id="poi-hours" hidden>
-          <b>Working hours</b>
-          <ul id="poi-hours-list"></ul>
+          <!-- info bubble shown on the map itself -->
+          <div class="map-bubble" id="map-bubble" hidden aria-live="polite">
+            <button class="mb-close" id="mb-close" aria-label="Close" type="button">✕</button>
+            <p class="mb-tag" id="mb-tag"></p>
+            <h3 id="mb-title"></h3>
+            <p id="mb-desc"></p>
+            <ul id="mb-hours"></ul>
+            <a class="btn btn-primary cta-primary" id="mb-btn" href="booking.html" data-book hidden>Book your stay</a>
+          </div>
         </div>
-        <a class="btn btn-primary cta-primary" id="poi-btn" href="booking.html" data-book hidden>Book your stay</a>
-      </aside>
+        <button class="fs-close" id="fs-close" aria-label="Close fullscreen map" type="button" hidden>✕</button>
+      </div>
     </div>
 
     <p class="park-note reveal">Summer schedule shown — in winter the park runs shorter hours and the boat/train may pause. Always check <a href="https://np-plitvicka-jezera.hr/en/" target="_blank" rel="noopener"><strong>np-plitvicka-jezera.hr</strong></a> for today's conditions.</p>
@@ -312,53 +313,93 @@
   </button>
 </div>
 
-<script src="assets/js/main.js?v=10"></script>
+<script src="assets/js/main.js?v=11"></script>
 <script>
-/* Interactive park map */
+/* Interactive park map — on-map bubbles; mobile opens fullscreen landscape */
 (function () {
   var DATA = {
     e1: { tag: "Park entrance · north", title: "Entrance 1 (Rastovača)", desc: "The northern gate, beside the Lower Lakes canyon and the Great Waterfall. Programs A, B, C and K1 start here. About 5 minutes by car from Villa Mukinja.", hours: ["Entrance: 07:00 – 20:00 (summer)", "Ticket sales until 17:00"] },
-    e2: { tag: "Park entrance · south", title: "Entrance 2 (Hladovina)", desc: "The southern gate and the closest one to us — a 10-minute walk from Villa Mukinja. Programs E, F, H and K2 start here, with direct access to the Upper Lakes and boat dock P1.", hours: ["Entrance: 07:00 – 20:00 (summer)", "Ticket sales until 17:00"] },
-    st1: { tag: "Panoramic train station", title: "Station St1", desc: "The Lower Lakes station of the panoramic road-train, near Entrance 1. Ride the ridge back toward St2 instead of retracing your steps.", hours: ["St1 → St2: 08:15 – 20:00, every 30 min", "St2 → St1: 08:00 – 19:45, every 30 min"] },
-    st2: { tag: "Panoramic train station · hub", title: "Station St2", desc: "The central hub above Entrance 2 — trains run from here in both directions: north to St1 (Lower Lakes) and south to St3 (Upper Lakes).", hours: ["St2 → St1: 08:00 – 19:45, every 30 min", "St2 → St3: 07:30 – 19:00, every 30 min"] },
-    st3: { tag: "Panoramic train station", title: "Station St3", desc: "The Upper Lakes terminus by Prošćansko jezero. (If you knew the park before: this is the former St4 — the old St3 stop no longer exists.)", hours: ["St3 → St2: 08:00 – 19:30, every 30 min", "St2 → St3: 07:30 – 19:00, every 30 min"] },
-    p1: { tag: "Electric boat dock", title: "Dock P1", desc: "The dock on the Entrance 2 side of Lake Kozjak. A silent two-minute hop connects it with P2 across the bay, all day long.", hours: ["P1 ↔ P2: 07:00 – 20:00, as needed"] },
-    p2: { tag: "Electric boat dock", title: "Dock P2", desc: "Departure point for the beautiful 20-minute glide down Lake Kozjak to P3 and the Lower Lakes — many guests' favourite moment of the day.", hours: ["P2 → P3: 08:00 – 18:00, every 30 min"] },
-    p3: { tag: "Electric boat dock", title: "Dock P3", desc: "The northern dock where Kozjak narrows into the Lower Lakes canyon. Step off the boat and the walkways to the Great Waterfall begin.", hours: ["P3 → P2: 08:30 – 18:30, every 30 min"] },
-    slap: { tag: "Natural landmark", title: "Veliki slap — the Great Waterfall", desc: "Croatia's tallest waterfall, 78 metres of free-falling water at the end of the Lower Lakes canyon. Best light in the morning; reach it from Entrance 1 or via P3.", hours: [] },
-    vm: { tag: "Your home base", title: "Villa Mukinja", desc: "Our family guesthouse in Mukinje village — a 10-minute walk from Entrance 2, with free parking, sauna and hot tub waiting after your lake day.", hours: [], book: true }
+    e2: { tag: "Park entrance · south", title: "Entrance 2 (Hladovina)", desc: "The southern gate and the closest one to us — a 10-minute walk from Villa Mukinja. Programs E, F, H and K2 start here.", hours: ["Entrance: 07:00 – 20:00 (summer)", "Ticket sales until 17:00"] },
+    st1: { tag: "Panoramic train station", title: "Station St1", desc: "The Lower Lakes station of the panoramic road-train, near Entrance 1.", hours: ["St1 → St2: 08:15 – 20:00, every 30 min", "St2 → St1: 08:00 – 19:45, every 30 min"] },
+    st2: { tag: "Panoramic train station · hub", title: "Station St2", desc: "The central hub above Entrance 2 — trains run north to St1 and south to St3.", hours: ["St2 → St1: 08:00 – 19:45, every 30 min", "St2 → St3: 07:30 – 19:00, every 30 min"] },
+    st3: { tag: "Panoramic train station", title: "Station St3", desc: "The Upper Lakes terminus by Prošćansko jezero. (Formerly St4 — the old St3 stop no longer exists.)", hours: ["St3 → St2: 08:00 – 19:30, every 30 min", "St2 → St3: 07:30 – 19:00, every 30 min"] },
+    p1: { tag: "Electric boat dock", title: "Dock P1", desc: "The dock on the Entrance 2 side of Lake Kozjak — a silent two-minute hop to P2, all day long.", hours: ["P1 ↔ P2: 07:00 – 20:00, as needed"] },
+    p2: { tag: "Electric boat dock", title: "Dock P2", desc: "Departure point for the beautiful 20-minute glide down Lake Kozjak to P3.", hours: ["P2 → P3: 08:00 – 18:00, every 30 min"] },
+    p3: { tag: "Electric boat dock", title: "Dock P3", desc: "The northern dock where Kozjak narrows into the Lower Lakes canyon.", hours: ["P3 → P2: 08:30 – 18:30, every 30 min"] },
+    slap: { tag: "Natural landmark", title: "Veliki slap", desc: "Croatia's tallest waterfall — 78 m of free-falling water at the end of the Lower Lakes canyon. Best light in the morning.", hours: [] },
+    vm: { tag: "Your home base", title: "Villa Mukinja", desc: "Our family guesthouse in Mukinje village — a 10-minute walk from Entrance 2, with sauna and hot tub waiting after your lake day.", hours: [], book: true }
   };
-  var map = document.getElementById("park-map");
-  if (!map) return;
-  var titleEl = document.getElementById("poi-title"), tagEl = document.getElementById("poi-tag"),
-      descEl = document.getElementById("poi-desc"), hoursWrap = document.getElementById("poi-hours"),
-      hoursList = document.getElementById("poi-hours-list"), btn = document.getElementById("poi-btn");
-  // on phones, start the pannable map centred on Villa Mukinja
-  var scroller = document.getElementById("park-scroll");
-  if (scroller && window.matchMedia("(max-width: 700px)").matches) {
-    var vm = map.querySelector('[data-poi="vm"]');
-    requestAnimationFrame(function () {
-      scroller.scrollLeft = Math.max(0, vm.offsetLeft - scroller.clientWidth / 2);
-    });
+  var frame = document.getElementById("park-frame"), map = document.getElementById("park-map");
+  if (!frame || !map) return;
+  var bubble = document.getElementById("map-bubble"), fsClose = document.getElementById("fs-close");
+  var mbTag = document.getElementById("mb-tag"), mbTitle = document.getElementById("mb-title"),
+      mbDesc = document.getElementById("mb-desc"), mbHours = document.getElementById("mb-hours"),
+      mbBtn = document.getElementById("mb-btn");
+  var isMobile = function () { return window.matchMedia("(max-width: 860px)").matches; };
+  var isFS = function () { return document.body.classList.contains("fs-map-open"); };
+
+  function hideBubble() {
+    bubble.hidden = true;
+    map.querySelectorAll(".poi.active").forEach(function (p) { p.classList.remove("active"); });
   }
-  map.addEventListener("click", function (e) {
-    var poi = e.target.closest(".poi");
-    if (!poi) return;
+
+  function showBubble(poi) {
     var d = DATA[poi.dataset.poi];
     if (!d) return;
     map.querySelectorAll(".poi.active").forEach(function (p) { p.classList.remove("active"); });
     poi.classList.add("active");
-    titleEl.textContent = d.title;
-    tagEl.textContent = d.tag;
-    descEl.textContent = d.desc;
-    hoursList.innerHTML = "";
-    d.hours.forEach(function (h) { var li = document.createElement("li"); li.textContent = h; hoursList.appendChild(li); });
-    hoursWrap.hidden = d.hours.length === 0;
-    btn.hidden = !d.book;
+    mbTag.textContent = d.tag;
+    mbTitle.textContent = d.title;
+    mbDesc.textContent = d.desc;
+    mbHours.innerHTML = "";
+    d.hours.forEach(function (h) { var li = document.createElement("li"); li.textContent = h; mbHours.appendChild(li); });
+    mbHours.style.display = d.hours.length ? "" : "none";
+    mbBtn.hidden = !d.book;
+    bubble.hidden = false;
+
+    if (isFS()) {
+      bubble.classList.add("corner");
+      bubble.style.left = ""; bubble.style.top = ""; bubble.style.right = "";
+    } else {
+      // desktop: place the bubble next to the pin, kept inside the map
+      bubble.classList.remove("corner");
+      var px = parseFloat(poi.style.left), py = parseFloat(poi.style.top);
+      var bw = 34; // bubble width as % of map (approx, clamped below)
+      var left = px > 55 ? px - bw - 4 : px + 4;
+      left = Math.max(1, Math.min(left, 99 - bw));
+      var top = py > 55 ? py - 42 : py + 6;
+      top = Math.max(2, Math.min(top, 60));
+      bubble.style.left = left + "%";
+      bubble.style.top = top + "%";
+      bubble.style.right = "auto";
+    }
     if (window.dataLayer) window.dataLayer.push({ event: "park_map_poi", poi: poi.dataset.poi });
-    var card = document.getElementById("poi-card");
-    if (window.matchMedia("(max-width: 860px)").matches) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  map.addEventListener("click", function (e) {
+    var poi = e.target.closest(".poi");
+    if (poi && (!isMobile() || isFS())) { e.stopPropagation(); showBubble(poi); return; }
+    if (e.target.closest("#mb-close")) { e.stopPropagation(); hideBubble(); return; }
+    if (e.target.closest(".map-bubble")) return;
+    if (isMobile() && !isFS()) { enterFS(); return; }
+    hideBubble();
   });
+
+  function enterFS() {
+    document.body.classList.add("fs-map-open");
+    fsClose.hidden = false;
+    hideBubble();
+  }
+  function exitFS() {
+    document.body.classList.remove("fs-map-open");
+    fsClose.hidden = true;
+    hideBubble();
+  }
+  fsClose.addEventListener("click", exitFS);
+  frame.addEventListener("click", function (e) {
+    if (isFS() && e.target === frame) exitFS();
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && isFS()) exitFS(); });
 })();
 </script>
 </body>
